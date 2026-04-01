@@ -87,7 +87,10 @@ class SalesChatbot {
     if (msg.includes("3") || msg.includes("flexibilidade")) {
       this.data.prioridade = "flexibilidade";
       this.state = "ask_flexibilidade";
-      return `Hoje você prefere aulas:\n1. Uma vez por semana\n2. Uma vez por mês\n3. Quanto menos presencial melhor`;
+      return `Hoje você prefere aulas:\n\n
+      1. Uma vez por semana\n\n
+      2. Uma vez por mês\n\n
+      3. Quanto menos presencial melhor`;
     }
 
     return `Me responde com uma dessas opções:\n1. Preço\n2. Trabalho\n3. Flexibilidade`;
