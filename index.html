@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Chatbot - 3 Microcompromissos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="chat-card">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="avatar">TF</div>
+          <div class="header-info">
+            <h1>The Future</h1>
+            <p>Atendimento comercial</p>
+          </div>
+        </div>
+
+        <div class="status">
+          <span class="status-dot"></span>
+          <span>Disponível</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="mini-btn" id="resetBtn">Reiniciar</button>
+        <button class="mini-btn" id="followBtn">Testar follow-up</button>
+      </div>
+
+      <div id="chat" class="chat-body"></div>
+
+      <div class="chat-footer">
+        <div class="input-wrap">
+          <span class="left-icon">◎</span>
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Mensagem..."
+            autocomplete="off"
+          />
+          <div class="footer-actions">
+            <span>≡</span>
+            <span>✦</span>
+            <span>◉</span>
+          </div>
+          <button class="send-btn" id="sendBtn">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
