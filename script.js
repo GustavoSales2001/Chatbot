@@ -341,27 +341,44 @@ class SalesChatbot {
   }
 
   buildOffer() {
-    const prazo = this.data.prazoTrabalho || "9 meses";
-    const flex = this.data.flexibilidade || "mínima presencial";
-    const valor = this.data.valor || 500;
+  const prazo = this.data.prazoTrabalho || "9 meses";
+  const flex = this.data.flexibilidade || "mínima presencial";
+  const valor = this.data.valor || 500;
 
-    return (
-      `Perfeito 👀 agora sim encontrei uma oportunidade alinhada com tudo o que você me falou.\n\n` +
-      `Resumo do que faz sentido para você:\n` +
-      `✔ Investimento próximo de $${valor}/mês\n` +
-      `✔ Possibilidade de trabalho em ${prazo}\n` +
-      `✔ Formato de aula com ${flex}\n\n` +
-      `Com base no seu perfil, essa é uma das opções mais compatíveis no momento.\n\n` +
-      `O próximo passo é iniciar o processo seletivo para validar bolsa, curso e unidade disponível para o seu caso.\n\n` +
-      `Faz sentido para você seguir com essa opção?`
-    );
-  }
+  return (
+    `Perfeito 👀 agora sim encontrei uma oportunidade alinhada com tudo o que você me falou.\n\n` +
 
+    `Resumo do que faz sentido para você:\n` +
+    `✔ Investimento próximo de $${valor}/mês\n` +
+    `✔ Possibilidade de trabalho em ${prazo}\n` +
+    `✔ Formato de aula com ${flex}\n\n` +
+
+    `Deixa eu te explicar rapidinho como funciona 👇\n\n` +
+
+    `Hoje, no processo seletivo, você pode ter acesso a até 4 opções de bolsas diferentes.\n` +
+    `A gente faz essa filtragem com base no seu perfil para encontrar as melhores oportunidades disponíveis no momento.\n\n` +
+
+    `Por exemplo: já tivemos alunos que entraram com uma opção inicial e acabaram escolhendo entre 3 ou 4 bolsas diferentes, inclusive com valores mais baixos do que esperavam.\n\n` +
+
+    `O processo é simples:\n` +
+    `1. Você faz uma pré-candidatura (leva menos de 5 minutos)\n` +
+    `2. A gente analisa seu perfil\n` +
+    `3. Te apresenta as melhores opções de bolsa, curso e unidade\n\n` +
+
+    `Isso evita que você escolha errado ou pague mais caro do que deveria.\n\n` +
+
+    `Agora me diz 👇\nFaz sentido para você seguir com essa opção?`
+  );
+}
+  
   handleOfertaResposta(msg) {
     if (this.isPositive(msg)) {
       this.data.ofertaAceita = "sim";
       this.state = "closed";
-      return `Perfeito! Parabéns pela conquista dessa bolsa 🎉\n\nAgora vou te encaminhar um link do processo seletivo para coletar algumas informações e te direcionar com mais precisão nas próximas etapas.\n\nÉ rápido e vai me ajudar a te apresentar as melhores opções de acordo com o seu perfil 👇\n\nDeixe seu contato/telefone. Qualquer esclarecimento entraremos em contato com você para quitar as suas dúvidas.`;
+      return `Perfeito! Parabéns pela conquista dessa bolsa 🎉\n\n
+      Agora vou te encaminhar um link do processo seletivo para coletar algumas informações e te direcionar com mais precisão nas próximas etapas.\n\n
+      É rápido e vai me ajudar a te apresentar as melhores opções de acordo com o seu perfil 👇\n\n
+      Deixe seu contato/telefone. Qualquer esclarecimento entraremos em contato com você para quitar as suas dúvidas.`;
     }
 
     if (this.isNegative(msg) || msg.includes("dúvida") || msg.includes("duvida")) {
