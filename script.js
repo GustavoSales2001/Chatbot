@@ -158,7 +158,7 @@ class SalesChatbot {
     if (this.isBrazilOrOutsideUs(msg)) {
       this.data.terceiroLocalizacao = "Brasil";
       this.state = "thirdparty_process";
-      return `Ela(e) pretende ir já com visto de estudante ou ainda está avaliando?`;
+      return `Ela(e) pretende ir já com visto de estudante ou prefere fazer troca de status?`;
     }
 
     return `Só para eu entender certinho 😊 ela(e) já está nos EUA ou ainda está no Brasil?`;
